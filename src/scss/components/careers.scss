@@ -1,0 +1,126 @@
+@import "colors";
+////////////////////////////
+///// CAREERS SECTION //////
+////////////////////////////
+.careers-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  .content {
+    min-height: 100vh;
+    justify-content: space-between;
+    // align-items: center;
+    // align-content: center;
+    // flex-direction: column;
+    // padding-top: 0px;
+    padding-top: calc(50vh - 250px);
+  }
+
+  a {
+    color: $blue1;
+  }
+  .careers-half,
+  .contact-half {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 33.3%;
+  }
+
+  .careers-half {
+    p {
+      max-width: 500px;
+    }
+  }
+
+  .contact-half {
+    h2 {
+      width: 100%;
+    }
+
+    a {
+      &:after {
+        display: none;
+      }
+    }
+
+    span {
+      display: inline-block;
+      width: 50%;
+      margin-top: 1em;
+    }
+  }
+}
+
+// 1024px And Below
+@media screen and (max-width: 1024px) {
+  .careers-section {
+    .careers-half,
+    .contact-half {
+    }
+
+    .contact-half {
+      span {
+        width: 100%;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 885px) {
+}
+
+// 767px And Below
+@media screen and (max-width: 799px) {
+  .careers-section {
+    padding: 0px;
+
+    .content {
+      padding-top: 120px;
+      align-content: flex-start;
+    }
+    .careers-half,
+    .contact-half {
+      margin-bottom: 70px;
+      width: 100%;
+      transform: translateX(0);
+    }
+
+    .contact-half {
+      margin-bottom: 0px;
+      span {
+        width: 100%;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+// 767px And Below
+@media screen and (max-width: 667px) {
+  .careers-section {
+    padding: 0px;
+
+    .content {
+      padding-top: 100px;
+      align-content: flex-start;
+    }
+    .careers-half,
+    .contact-half {
+      margin-bottom: 40px;
+      width: 100%;
+      transform: translateX(0);
+    }
+
+    .contact-half {
+      margin-bottom: 0px;
+      span {
+        width: 100%;
+        margin-bottom: 0px;
+        line-height: 1;
+      }
+    }
+  }
+}

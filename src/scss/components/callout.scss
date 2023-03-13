@@ -1,0 +1,56 @@
+@import "colors";
+////////////////////////////
+///// CALLOUT SECTION //////
+////////////////////////////
+.callout-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 50vh;
+  color: $blue2;
+  padding: 0;
+
+  .content {
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+  }
+  .callout-text {
+    text-align: center;
+    max-width: 930px;
+    font-size: 48px;
+  }
+
+  .calloutBodyLinesWrap {
+    overflow: hidden;
+  }
+}
+
+// 1024px And Below
+@media screen and (max-width: 1024px) {
+  .callout-section {
+    .callout-text {
+      font-size: 36px;
+    }
+  }
+}
+
+@media screen and (max-width: 885px) {
+}
+
+// 767px And Below
+@media screen and (max-width: 799px) {
+  .callout-section {
+    .callout-text {
+      font-size: 28px;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+}

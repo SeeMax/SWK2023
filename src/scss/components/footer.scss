@@ -1,0 +1,28 @@
+@import "colors";
+
+.footer {
+  position: relative;
+  font-size: 14px;
+
+  .copyright {
+    width: 100%;
+    text-align: center;
+    padding: 30px 25px;
+    font-size: 12px;
+  }
+}
+
+// 1024px And Below
+@media screen and (max-width: 1024px) {
+  .footer {
+  }
+}
+
+@media screen and (max-width: 885px) {
+}
+
+// 767px And Below
+@media screen and (max-width: 799px) {
+  .footer {
+  }
+}

@@ -1,0 +1,148 @@
+.fixed-back {
+  position: fixed;
+  // z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+#hero {
+  z-index: 20;
+}
+
+#background-svg-hero {
+  z-index: 19;
+}
+
+#why {
+  z-index: 18;
+}
+
+#background-svg-why {
+  z-index: 17;
+}
+
+#callout {
+  z-index: 16;
+}
+
+#background-svg-callout {
+  z-index: 15;
+
+  * {
+    will-change: transform;
+  }
+}
+
+#background-svg-callout-2-1 {
+  fill: white;
+}
+
+#background-svg-what {
+  z-index: 16;
+}
+
+#whatscroll {
+  z-index: 102;
+}
+
+#what {
+  z-index: 18;
+}
+
+#background-svg-who {
+  z-index: 19;
+}
+
+#who {
+  z-index: 20;
+}
+
+#background-svg-careers {
+  z-index: 1;
+}
+
+#background-svg-hero-1 {
+  fill: $clay3;
+}
+
+#background-svg-hero-2 {
+  fill: $clay1;
+}
+
+#background-svg-hero-3 {
+  fill: $blue3;
+}
+
+#background-svg-why-1 {
+  fill: $blue2;
+}
+
+#background-svg-why-2 {
+  fill: $blueOverlay;
+}
+
+#background-svg-why-2-2 {
+  opacity: 0;
+  fill: $blueOverlay;
+}
+
+#background-svg-callout {
+  overflow: hidden;
+
+  svg {
+    position: absolute;
+    width: 135%;
+    height: 215%;
+  }
+
+  #background-svg-callout-gradient-1 {
+    top: -10px;
+    left: -20%;
+    transform: translateX(100vh);
+  }
+
+  #background-svg-callout-gradient-2 {
+    bottom: 10px;
+    right: -20%;
+    transform: translateX(-100vh);
+  }
+}
+
+#background-svg-what {
+}
+
+#background-svg-what-1 {
+  fill: $clay1;
+}
+#background-svg-what-2 {
+  fill: $clay1;
+}
+
+#background-svg-what-3 {
+  fill: $blue2;
+}
+
+#background-svg-who-1 {
+  fill: $blue2;
+}
+
+#background-svg-who-2,
+#background-svg-who-3 {
+  fill: $blueOverlay;
+}
+
+#background-svg-careers-1 {
+  fill: $blue3;
+}
+#background-svg-careers-2 {
+  fill: $clay1;
+}
+#background-svg-careers-3 {
+  fill: $clay2;
+}
+
+.hidden-svg {
+  display: none;
+}
