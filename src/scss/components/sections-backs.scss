@@ -31,7 +31,7 @@
   z-index: 15;
 
   * {
-    will-change: transform;
+    // will-change: transform;
   }
 }
 
@@ -91,22 +91,40 @@
 #background-svg-callout {
   overflow: hidden;
 
-  svg {
+  #background-svg-callout-gradient-1,
+  #background-svg-callout-gradient-2 {
     position: absolute;
-    width: 135%;
-    height: 215%;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 135%;
+      height: 200%;
+    }
   }
 
   #background-svg-callout-gradient-1 {
-    top: -10px;
-    left: -20%;
-    transform: translateX(100vh);
+    transform: translateX(100vw);
+    svg {
+      top: -10px;
+      left: -18%;
+    }
   }
 
   #background-svg-callout-gradient-2 {
-    bottom: 10px;
-    right: -20%;
-    transform: translateX(-100vh);
+    transform: translateX(-100vw);
+
+    svg {
+      top: auto;
+      left: auto;
+      bottom: 10px;
+      right: -18%;
+    }
   }
 }
 
