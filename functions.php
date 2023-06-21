@@ -836,90 +836,90 @@ function catch_that_image() {
   ob_start();
   ob_end_clean();
   $output = preg_match_all('/<img.+?src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
-  $first_img = $matches[1][0];
+$first_img = $matches[1][0];
 
-  if(empty($first_img)) {
-    $first_img = get_template_directory_uri() . "/dist/images/default-image.jpg";
-  }
-  return $first_img;
+if(empty($first_img)) {
+$first_img = get_template_directory_uri() . "/dist/images/default-image.jpg";
+}
+return $first_img;
 }
 
 // // Change dashboard Posts Label
 // add_action( 'init', 'cp_change_post_object' );
 // function cp_change_post_object() {
-//     $get_post_type = get_post_type_object('post');
-//     $labels = $get_post_type->labels;
-//         $labels->name = 'Insights';
-//         $labels->singular_name = 'Insight';
-//         $labels->add_new = 'Add Insight';
-//         $labels->add_new_item = 'Add Insight';
-//         $labels->edit_item = 'Edit Insight';
-//         $labels->new_item = 'Insight';
-//         $labels->view_item = 'View Insights';
-//         $labels->search_items = 'Search Insights';
-//         $labels->not_found = 'No Insights found';
-//         $labels->not_found_in_trash = 'No Insights found in Trash';
-//         $labels->all_items = 'All Insights';
-//         $labels->menu_name = 'Insights';
-//         $labels->name_admin_bar = 'Insights';
+// $get_post_type = get_post_type_object('post');
+// $labels = $get_post_type->labels;
+// $labels->name = 'Insights';
+// $labels->singular_name = 'Insight';
+// $labels->add_new = 'Add Insight';
+// $labels->add_new_item = 'Add Insight';
+// $labels->edit_item = 'Edit Insight';
+// $labels->new_item = 'Insight';
+// $labels->view_item = 'View Insights';
+// $labels->search_items = 'Search Insights';
+// $labels->not_found = 'No Insights found';
+// $labels->not_found_in_trash = 'No Insights found in Trash';
+// $labels->all_items = 'All Insights';
+// $labels->menu_name = 'Insights';
+// $labels->name_admin_bar = 'Insights';
 // }
 
 // // Change dashboard Posts Icon
 // function change_post_menu_label_icon() {
-//   global $menu;
-//   $menu[5][6] = 'dashicons-megaphone';
-//   echo '';
+// global $menu;
+// $menu[5][6] = 'dashicons-megaphone';
+// echo '';
 // }
 // add_action( 'admin_menu', 'change_post_menu_label_icon' );
 
 
 // // Move Jetpack Logos
 // function jptweak_remove_share() {
-//   remove_filter( 'the_content', 'sharing_display', 19 );
-//   remove_filter( 'the_excerpt', 'sharing_display', 19 );
-//   if ( class_exists( 'Jetpack_Likes' ) ) {
-//       remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
-//   }
+// remove_filter( 'the_content', 'sharing_display', 19 );
+// remove_filter( 'the_excerpt', 'sharing_display', 19 );
+// if ( class_exists( 'Jetpack_Likes' ) ) {
+// remove_filter( 'the_content', array( Jetpack_Likes::init(), 'post_likes' ), 30, 1 );
+// }
 // }
 
 // add_action( 'loop_start', 'jptweak_remove_share' );
 
-//////////////  SEEMAXWORK  ///////////////
-//// PROJECT SPECIFIC CUSTOMIZATION  /////
+////////////// SEEMAXWORK ///////////////
+//// PROJECT SPECIFIC CUSTOMIZATION /////
 /////////////////////////////////////////
 
 
 // Allow SVG
 add_filter( 'wp_check_filetype_and_ext', function($data, $file, $filename, $mimes) {
 
-  global $wp_version;
-  if ( $wp_version !== '4.7.1' ) {
-     return $data;
-  }
+global $wp_version;
+if ( $wp_version !== '4.7.1' ) {
+return $data;
+}
 
-  $filetype = wp_check_filetype( $filename, $mimes );
+$filetype = wp_check_filetype( $filename, $mimes );
 
-  return [
-      'ext'             => $filetype['ext'],
-      'type'            => $filetype['type'],
-      'proper_filename' => $data['proper_filename']
-  ];
+return [
+'ext' => $filetype['ext'],
+'type' => $filetype['type'],
+'proper_filename' => $data['proper_filename']
+];
 
 }, 10, 4 );
 
 function cc_mime_types( $mimes ){
-  $mimes['svg'] = 'image/svg+xml';
-  return $mimes;
+$mimes['svg'] = 'image/svg+xml';
+return $mimes;
 }
 add_filter( 'upload_mimes', 'cc_mime_types' );
 
 function fix_svg() {
-  echo '<style type="text/css">
-        .attachment-266x266, .thumbnail img {
-             width: 100% !important;
-             height: auto !important;
-        }
-        </style>';
+echo '<style type="text/css">
+.attachment-266x266,
+.thumbnail img {
+  width: 100% !important;
+  height: auto !important;
+}
+</style>';
 }
 add_action( 'admin_head', 'fix_svg' );
-
